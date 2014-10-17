@@ -31,4 +31,10 @@ WORKDIR kinetic-py
 RUN git submodule update --init
 RUN python setup.py develop
 
+# Now cd back to the top-level folder and grab the
+# sbates130272/kinetic repo which contains a codebase for working with
+# the kinetic HDDs.
+WORKDIR ..
+git clone https://github.com/sbates130272/kinetic.git
+WORKDIR kinetic
 
